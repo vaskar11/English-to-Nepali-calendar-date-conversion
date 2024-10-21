@@ -94,6 +94,7 @@ current_time = datetime.datetime.now()
 print("Current time is:")
 print(current_time.strftime("%H:%M:%S"))
 
+
 # Calendar module is used to print calendar
 print(f"\nEnglish Calendar for Year {nepali_Year}, Month {nepali_Month}:")
 print(calendar.month(engYear, engMonth)) 
