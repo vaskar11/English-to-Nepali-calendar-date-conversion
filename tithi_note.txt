@@ -1,0 +1,21 @@
+Tithi essentially represents the phase of the lunar cycle, dividing it into 30 equal parts, each covering approximately 12 degrees of the Moon’s movement relative to the Sun
+Code: tithi = int((lunar_longitude - solar_longitude) % (2 * ephem.pi) / (ephem.pi / 15)) + 1
+
+1. lunar_longitude - solar_longitude: This gives the angular distance between the Moon and the Sun in radians on the given date. This distance is used to determine the Moon's position relative to the Sun.
+
+    - When lunar_longitude - solar_longitude is close to zero, it means the Moon and Sun are aligned, marking a new moon (Tithi: Amavasya or Tithi 30).
+    - As the Moon moves away from the Sun, this difference increases, marking different phases in the lunar cycle.
+
+2. % (2 * ephem.pi): This takes the difference in longitude and wraps it within a full circle (360 degrees), ensuring the angle stays within the 0 to 360-degree range (or 0 to 2π radians).
+
+3. / (ephem.pi / 15): This is the critical part that converts the angular distance into a Tithi index. Here’s how:
+    - Each Tithi represents a 12-degree shift between the Sun and the Moon
+    - 𝜋/15 in radians is the equivalent of 12 degrees
+    - Dividing by 𝜋/15 scales the angle difference so each 12-degree increment gives a new Tithi
+
+
+For example:
+
+If the angle is 12 degrees, dividing by 
+𝜋/15 would yield approximately 1, indicating the 1st Tithi.
+If the angle is 24 degrees, it results in 2 Tithis, and so forth.

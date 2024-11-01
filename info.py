@@ -1,5 +1,8 @@
 import csv
-
+import requests
+import ephem
+# from project_1 import TITHI_LIST
+''''this is for the csv part'''
 # Function to load CSV into a dictionary like the one requested
 def load_bs_years_data(file_path):
     bs_years_data = {}
@@ -16,7 +19,7 @@ def load_bs_years_data(file_path):
 # Path to the CSV file
 # file_path = "E:\\intern\\projects\\Nepali_calender\\calendar_bs.csv"
 file_path = 'calendar_bs.csv'
-
-
 # Load the CSV data into the desired dictionary format
 bs_years_data = load_bs_years_data(file_path)
+
+
